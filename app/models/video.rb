@@ -6,6 +6,7 @@ class Video
     case url
     when /youtube.com.*(?:\/|v=)([\w\-\_]+)/ then @id = $1
     when /youtu.be.*(?:\/|v=)([\w\-\_]+)/ then @id = $1
+    when /vimeo.com\/(.*\/)?(.*\#)?(\d+)($|\/)/ then @id = $3
     end
 
     unless @id.present?
