@@ -20,9 +20,9 @@ $(function(){
     url = $('input#url').val();
     $.getJSON('/process', {url: url}, function(response){
       if(response.id != undefined) {
-        alert(response.id)
+        $('#videoId').text(response.id)
       } else {
-        alert(response.message)
+        $('#errorMessage').text(response.message)
       }
     });
   });
