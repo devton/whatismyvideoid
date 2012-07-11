@@ -20,9 +20,20 @@ $(function(){
     url = $('input#url').val();
     $.getJSON('/process', {url: url}, function(response){
       if(response.id != undefined) {
-        $('#videoId').text(response.id)
+        $('#videoId p span').text(response.id)
+        $('.message_box').fadeOut(300, function(){
+          $('#errorMessage').hide();
+          $('#videoId').show();
+          $(this).fadeIn(200);
+        })
+
       } else {
-        $('#errorMessage').text(response.message)
+        $('#errorMessage p').text(response.message)
+        $('.message_box').fadeOut(300, function(){
+          $('#videoId').hide();
+          $('#errorMessage').show();
+          $(this).fadeIn(200);
+        })
       }
     });
   });

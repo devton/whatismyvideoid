@@ -10,6 +10,11 @@ h5
 = form_tag '/process', :method => :get, :class => 'process_form' do
   = text_field_tag 'url', nil, :placeholder => 'PASTE THE VIDEO URL HERE!!'
   = submit_tag 'GET ID!'
-
-#videoId
-#errorMessage
+.clear
+.message_box.hide
+  #videoId
+    p
+      | HI! you video id is: 
+      span
+  #errorMessage
+    p
