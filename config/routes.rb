@@ -1,7 +1,7 @@
 Whatismyvideoid::Application.routes.draw do
   root :to => 'application#home'
 
-  get '/:url' => 'application#process_url', :as => :process_url
+  get '/process/(:url)' => 'application#process_url', :as => :process_url
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

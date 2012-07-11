@@ -32,4 +32,8 @@ describe Video do
     it_behaves_like 'video url', "http://youtu.be/ugToTCotX0E", "ugToTCotX0E"
     it_behaves_like 'video url', "youtu.be/ugToTCotX0E", "ugToTCotX0E"
   end
+
+  it "when id isn't present should raise a error" do
+    lambda { described_class.new('http://google.com.br') }.should raise_exception
+  end
 end
