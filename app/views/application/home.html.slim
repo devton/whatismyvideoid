@@ -1,1 +1,12 @@
-h2 Hello
+h1 
+  | what
+  span is
+  | my
+  span video
+  | id
+h5
+ the easy way to get you video id from ( youtube, vimeo and another video providers...)
+
+= form_tag '/process', :method => :get, :class => 'process_form' do
+  = text_field_tag 'url', nil, :placeholder => 'PASTE THE VIDEO URL HERE!!'
+  = submit_tag 'GET ID!'

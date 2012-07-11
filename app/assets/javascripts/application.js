@@ -13,3 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function(){
+  $('form.process_form').submit(function(e){
+    e.preventDefault()
+    url = $('input#url').val();
+    $.getJSON('/process', {url: url}, function(response){
+      if(response.id != undefined) {
+        alert(response.id)
+      } else {
+        alert(response.message)
+      }
+    });
+  });
+});
