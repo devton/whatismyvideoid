@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Youtube do
+describe Video do
   shared_examples_for "video url" do |url, id|
     it "#{url} return the id -> #{id}" do
-      youtube = Youtube.new(url)
-      youtube.id.should == id
+      video = described_class.new(url)
+      video.id.should == id
     end
   end
 
